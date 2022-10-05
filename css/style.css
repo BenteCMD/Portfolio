@@ -1,0 +1,347 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+	font-family: "Helvetica";
+	src: url("../fonts/FreeSans.ttf") format("ttf")
+}
+
+@font-face {
+	font-family: "Century Gothic Bold";
+	src: url("../fonts/GOTHICB0.woff2") format("woff2")
+}
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+    --main-color: #005B48; 
+    --main-color2: #F7F1E8;
+    --accent-color: ;
+    --selection-color: #99DCCE;
+
+    --main-font:  "Helvetica", "Roboto", "sans-serif";
+    --kopjes-font: "Century Gothic Bold", "sans-serif";
+    --links-font: ;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-color: #005B48;
+        --main-color2: #F7F1E8;
+        --accent-color: ;
+        --selection-color: #99DCCE;
+    }
+}
+
+
+
+/**********************/
+/*  Algemene styling  */
+/**********************/
+
+body {
+    font-family: var(--main-font);
+    color: black;
+    font-size: 1.1rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--kopjes-font);
+}
+
+li {
+    list-style: none;
+}
+
+
+/******************/
+/*  Landing page  */
+/******************/
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+header nav ul {
+    background-color: var(--main-color);
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .8s ease-in-out;
+    display: none;
+}
+
+header ul.opzij {
+    display: block;
+    max-width: 15em;
+    padding-top: 12em;
+    transition: .8s ease-in-out;
+    padding-left: 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2em;
+}
+
+header nav ul li {
+    min-width: 20em;
+}
+
+header nav ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--main-color2);
+    font-family: var(--kopjes-font);
+    transition: .5s;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    color: var(--selection-color);
+    font-size: 2.2rem;
+    outline: none;
+}
+
+#h1-wrapper {
+    background-color: #FFEDCB;
+    width: fit-content;
+    position: relative;
+}
+
+#home h1::first-letter {
+    opacity: 0%;
+}
+
+#home h1 {
+    color: var(--main-color);
+    padding: .5em;
+    font-size: 5rem;
+    max-width: 450px;
+    position: relative;
+}
+
+#line1 {
+    background-color: #005B48;
+    border-radius: 100px;
+    width: 30em;
+    height: 3em;
+    left: -1.3em;
+    top: 8em;
+    position: absolute;
+}
+
+#bente {
+    padding-left: .5em;
+}
+
+#portfolio {
+    font-size: 8rem;
+    position: absolute;
+    top: .7em;
+    left: 6em;
+    transition: .7s;
+    font-weight: 900;
+}
+
+@media (max-width: 1300px) {
+    #portfolio {
+        left: 4em;
+        transition: .7s;
+    }
+}
+
+@media (max-width: 1050px) {
+    #portfolio {
+        font-size: 6rem;
+        left: 5.3em;
+        top: 1.3em;
+        transition: .7s;
+    }
+}
+
+@media (max-width: 830px) {
+    #home h1 {
+        font-size: 4.5rem;
+        min-width: 350px;
+        padding-top: .7em;
+    }
+
+    #h1-wrapper {
+        min-width: 100%;
+    }
+
+    #bente {
+        padding-left: .6em;
+    }
+
+    #portfolio {
+        font-size: 5rem;
+        position: static;
+    }
+}
+
+
+#logo {
+    width: 6em;
+    height: 6em;
+    transition: 1.3s ease-out;
+}
+
+#block1 {
+    background-color: #FFEDCB;
+    width: 5em;
+    height: 6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 2em;
+    top: 3.5em;
+    transition: .4s ease-out;
+}
+
+#block1.verplaatsen {
+    transform: translateX(3em) translateY(1em);
+    width: 8.5em;
+    height: 8.5em;
+    left: 0px;
+    top: 0px;
+}
+
+#block1:hover,
+#block1:focus {
+    width: 20em;
+    height: 20em;
+    outline: none;
+}
+
+#block1:hover img,
+#block1:focus img {
+    transform: scale(1.7);
+    transition: .7s;
+}
+
+
+.interactive-thingy {
+    animation: expand 2s;
+    animation-delay: .1s;
+    transition: 1s ease-in-out;
+}
+
+.interactive-thingy:hover {
+   width: 20em;
+}
+
+@keyframes expand {
+    0% {
+        width: 10em;
+    }
+
+    50% {
+        width: 20em;
+    }
+
+    100% {
+        width: 10em;
+    }
+}
+
+main {
+    background-color: var(--main-color2);
+    padding: 1em;
+}
+
+main.omhoog {
+    margin-top: -25em;
+}
+
+main section:first-of-type {
+    height: 10vh;
+}
+
+main section#aboutme {
+    padding-top: 15em;
+    background-color: var(--main-color2);
+    min-height: 119vh;
+}
+
+main section:nth-of-type(3) {
+    background-color: var(--main-color);
+}
+
+main section:nth-of-type(4) {
+    background-color: var(--main-color2);
+}
+
+main section:first-of-type {
+    position: relative;
+}
+
+#ik {
+    width: 465px;
+    height: 730px;
+    position: absolute;
+    right: 15em;
+    transform: translateY(20em);
+    transition: .7s;
+    z-index: 3;
+    background-image: url(../images/logo-green.svg);
+    background-repeat: no-repeat;
+    background-position-y: 110px;
+}
+
+#ik.peekaboo {
+    transform: translateY(-9em);
+}
+
+
+
+
+.overgang {
+    position: relative;
+}
+
+.overgang::before {
+    content: "";
+	position: absolute;
+	top: -33px;
+	left: 0px;
+    background-image: linear-gradient(1deg, var(--main-color) 50%, var(--main-color2) 0);
+    background-size: 1600px 40px;
+	width: 100%;
+	height: 40px;
+}
+
+.overgang-reverse {
+    position: relative;
+}
+
+.overgang-reverse::after {
+    content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+    background-image: linear-gradient(-1deg, var(--main-color2) 50%, var(--main-color) 0);
+    background-size: 1600px 120px;
+	width: 100%;
+	height: 120px;
+}
