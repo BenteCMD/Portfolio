@@ -11,37 +11,106 @@
 <body id="home">
     <header>
 
-        <div id="h1-wrapper">
+        <div id="maze-wrapper">
             <div id="line1"></div>
-            <h1><span id="bente">Bente</span> van der Zeijden <span id="portfolio">Portfolio</span></h1>
+            <div id="line1-2"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+            <div id="line3-2"></div>
+            <div id="line3-3"></div>
+            <div id="line3-4"></div>
+            <div id="line4"></div>
+            <div id="line5"></div>
+            <div id="line6"></div>
+            <div id="line6-2"></div>
+            <div id="line7"></div>
+            <div id="line8"></div>
         </div>
+    
+        <div id="h1-wrapper">
+            <h1 aria-label="Bente van der Zeijden Portfolio 2022"><span id="bente">Bente</span> van der Zeijden</h1>
+            <div id="h1-wrapper2">
+                <p id="portfolio" aria-hidden="true">Portfolio</p>
+                <p id="jaar" aria-hidden="true">2022</p>
+            </div>
+        </div>
+        <h2>Junior UX designer</h2>
 
-        <div tabindex="1" class="interactive-thingy" id="block1"><img id="logo" src="images/logo-green.svg" alt="my logo"></div>
+        <button tabindex="1" id="cta-pijl">
+            <img src="images/pijltjuh.svg" alt="arrow">
+        </button>
+        <p id="scrolldown">View portfolio</p>
+
+        <div tabindex="1" id="block1"><img id="logo" src="images/logo-green.svg" alt="my logo"></div>
+
             <nav>
                 <ul>
-                    <li><a href="">About me</a></li>
+                    <li><a tabindex="0" href="">About me</a></li>
                     <li><a href="">Projects</a></li>
                     <li><a href="">Contact</a></li>
+                    <li><a aria-hidden="true" tabindex="-1" href="#">Menu</a></li>
                 </ul>
             </nav>
+
+            <button id="pijl-btn">
+              <img src="images/pijl-btn.svg" alt="pijltje">
+            </button>
+
     </header>
     <main>
-        <section>
-            <h2>hoi</h2>
-            <p>hoi welkom ik ben Bente blablablabal</p>
-        </section>
         <section id="aboutme">
             <h2>About me</h2>
+            <p>I'm a junior web designer blablabla
+                I'm a junior web designer blablabla
+                I'm a junior web designer blablabla
+                I'm a junior web designer blablabla
+            </p>
+            <p>I'm a junior web designer blablabla
+                I'm a junior web designer blablabla
+                I'm a junior web designer blablabla
+            </p>
+           
             <img id="ik" src="images/ik.png" alt="a picture of me">
+
+            <button id="aboutme-pijl" class="next-pijl">
+                <img src="images/pijltjuh.svg" alt="arrow">
+            </button>
         </section>
-        <section>
+        <section id="skills">
+            
+            <button id="skills-pijl1" class="next-pijl">
+                <img src="images/pijltjuh.svg" alt="arrow">
+            </button>
+
+            <h3>Skills</h3>
+
+            <div id="kist">
+                <img id="toolkit" src="images/toolboxx.svg" alt="illustration of a toolkit">
+                <img aria-hidden="true" id="voorkant-kist" src="images/voorkant-kist.svg" alt="">
+                <img tabindex="1" id="ai" src="images/ai.svg" alt ="adobe illustrator icon">
+                <img tabindex="1" id="ps" src="images/ps.svg" alt ="adobe photoshop icon">
+                <img tabindex="1" id="xd" src="images/xd.svg" alt ="adobe xd icon">
+                <img tabindex="1" id="code" src="images/code.svg" alt ="code icon">
+                <p id="ai-p">Ik beheers Adobe Illustrator vrij goed. Het is mijn go-to tool voor vormgeving van bijv. posters. Daarnaast vind ik het leuk om vector illustraties te maken (link)</p>
+                <p id="ps-p">Ik heb een basiskennis van Photoshop, ik ben het nog aan het leren.</p>
+                <p id="xd-p">Met Adobe XD lukt het mij goed om prototypes maken.</p>
+                <p id="code-p">Ik kan vrij goed met HTML en CSS over weg, van Javascript heb ik een basiskennis. Ik heb deze portfolio ook zelf gecodeerd. Ik vind het leuk om sites interactief te maken.</p>
+            </div>
+
+            <button id="skills-pijl2" class="next-pijl">
+                <img src="images/pijltjuh.svg" alt="arrow">
+            </button>
+
+        </section>
+        <section> 
             <h2>Projects</h2>
         </section>
         <section>
             <h2>Contact</h2>
         </section>
-        
+         
     </main>
     <script defer src="js/script.js"></script>
+    <script type="text/javascript"> document.addEventListener('click', function(e) { if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } }); </script>
 </body>
 </html>
